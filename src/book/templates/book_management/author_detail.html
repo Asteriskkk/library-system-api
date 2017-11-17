@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+
+  
+
+
+<H1>LIST OF BOOKS</H1>
+
+<div class="container">
+  <div class="row">
+    <div class="span5">
+            <table class="table table-striped table-condensed">
+                  <thead>
+                  <tr>
+                      <th>Book</th>
+                      <th></th>                                        
+                  </tr>
+              </thead>   
+              <tbody>
+              {% for copy in author.book_set.all %}
+                <tr>
+                    
+                    <td>{{ copy.title }}</td>
+                    
+                    <td><a href="{%url 'books_detail' copy.id%}"><button type="button" class="btn btn-primary">Detail</button></td></a>
+                    </td>                                       
+                </tr> 
+                {% endfor %}                  
+              </tbody>
+            </table>
+            </div>
+  </div>
+</div>
+
+    
+
+
+</body>
+</html>
+
+
+

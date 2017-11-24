@@ -17,22 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from .views import (
 
-    BookListAPIView,
-    BookCreateAPIView,
-    BookInstanceCreateAPIView,
-    GenreCreateAPIView,
+   
     AuthorCreateAPIView,
-    InstanceAPIView,
-    BookDetailAPIView
+  
 
     )
 
 urlpatterns = [
-    url(r'^booklist/$',BookListAPIView.as_view(), name='books_list'),
-        url(r'^create/book$',BookCreateAPIView.as_view(), name='books_create'),
-         url(r'^create/genre$',GenreCreateAPIView.as_view(), name='genre_create'),
-          url(r'^create/author$',AuthorCreateAPIView.as_view(), name='author_create'),
-           url(r'^create/instance$',BookInstanceCreateAPIView.as_view(), name='instance_create'),
-           url(r'^instance/$',InstanceAPIView.as_view(), name='instance'),
-           url(r'^book/detail/(?P<pk>\d+)/$',BookDetailAPIView.as_view(), name='book_details'),
+
+          url(r'^create/$',AuthorCreateAPIView.as_view(), name='author_create'),
+          
 ]

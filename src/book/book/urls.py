@@ -15,17 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from book_management.views import BookListView,BookDetailView,AuthorListView,AuthorDetailView,LoanedBooksByUserListView
+from book_management.views import PetListView,PetDetailView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^books/(?P<pk>\d+)/$',BookDetailView.as_view(), name='books_detail'),
-    url(r'^authors/$',AuthorListView.as_view(), name='authors'),
-    url(r'^authors/(?P<pk>\d+)/$',AuthorDetailView.as_view(), name='authors_detail'),
+    url(r'^pet/(?P<pk>\d+)/$',PetDetailView.as_view(), name='pet_detail'),
      url(r'^accounts/', include('allauth.urls')),
-     url(r'^mybooks/$', LoanedBooksByUserListView.as_view(), name='my-borrowed'),
-  
+     
+
      url(r'^api/', include('book_management.api.urls',namespace='api')),
-        url(r'^$',BookListView.as_view(), name='books'),
+         url(r'^$',PetListView.as_view(), name='pet'),
 ]
